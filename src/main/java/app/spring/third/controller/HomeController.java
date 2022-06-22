@@ -19,9 +19,9 @@ import app.spring.third.service.NaverService;
 @Controller
 public class HomeController {
 	@Autowired
-	private LoginService loginService;			//선언은 반드시 부모로 진행한다.
+	private LoginService loginService;			
 	@Autowired
-	private NaverService naverService;			//실제로 대입되는건 인터페이스의 자식의 객체
+	private NaverService naverService;			
 	
 	
 	//홈으로 이동
@@ -76,14 +76,7 @@ public class HomeController {
 	}
 	
 	
-	
-	//네이버 간편가입
-//	1)네이버 로그인 요청(네이버에서 가입된 정보를 이용)
-//	2)callback주소로 code, state받기
-//	3)code,state를 이용해 access_token얻기(회원정보 얻기 위해)
-//	4)acess_token을 이용해서 개인회원정보 요청 
-//  5)요청해서 얻은 개인회원정보를 저장
-	
+
 	//네이버 콜백주소
 	//code:네이버에서 만들어준 코드(동의했다)
 	@GetMapping("naverCallback")//코드는 네이버에서 만든, 정상적으로 로그인 되었다는 인증이다.(정보 제공에 동의했다.)

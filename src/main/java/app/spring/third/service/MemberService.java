@@ -17,6 +17,8 @@ public interface MemberService {
 
 	 int delete(String member_id) throws Exception;
 
+	ErrorCode emailCheck(String email);
+
 
 	
 

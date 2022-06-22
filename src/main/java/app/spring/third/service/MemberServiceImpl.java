@@ -123,6 +123,19 @@ public class MemberServiceImpl implements MemberService{
 		return memberRepository.delete(member_id);
 	}
 
+
+	@Override
+	public ErrorCode emailCheck(String email) {
+		//join에서 이메일 존재 체크 
+		Member member = memberRepository.selectOne(email);
+		if(member==null) {//이메일이 존재하지 않는다면 
+			return ErrorCode.ERROR_EMAIL_EXIT;
+			
+		}
+		//이메일이 존재할 경우
+		return ErrorCode.SUCCESS_EMAIL_NOEXITXT;
+	}
+
 	
 
 }

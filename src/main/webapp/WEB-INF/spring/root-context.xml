@@ -5,17 +5,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-		<!--컨트롤러와 상관없는 설정들, 파일의 이름은 얼마든지 바뀌거나 늘어날 수 있다. 
-	web.xml에서 호출하기 때문에 새로 생성하거나 이름을 바꾸게 되면 web.xml에서 수정해주어야 한다. -->	
-	<!--데이터 소스 생성-->
-	<!--이렇게 만들어주면 db 교체가 용이해진다.--><!--  id나 타입이  제이유닛과 동일하게-->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="hr"/>
-		<property name="password" value="hr"/>
+	<!-- Root Context: defines shared resources visible to all other web components -->	
+	<!--환경설정 객체-->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:/application.properties"/>
+		<property name="fileEncoding" value="utf-8"/>
 	</bean>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}"/>
+		<property name="url" value="${database.url}"/>
+		<property name="username" value="${database.username}"/>
+		<property name="password" value="${database.password}"/>
+	</bean>
+	
+	
+	
 	
 	<!-- 마이바티스 factory객체 생성 (스프링에게 만들자고 알리기)-->
 	<!--세션을 만드는 공장을 만들기 위해 아이디 소스를 참조로 해서 아래의 데이터베이스를 만든다.-->
