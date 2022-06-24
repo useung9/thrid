@@ -1,5 +1,7 @@
 package app.spring.third.repository;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import app.spring.third.dto.Member;
@@ -23,7 +25,8 @@ public interface MemberRepository {
 	//회원탈퇴
 	int delete(String member_id) throws Exception;
 	
-
+	// 전체 유저목록 - 관리자로부터
+	List<Member> AllUser();
 	
 
 

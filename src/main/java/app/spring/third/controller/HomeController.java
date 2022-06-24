@@ -1,5 +1,6 @@
 package app.spring.third.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -10,11 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import app.spring.third.advice.ErrorCode;
+import app.spring.third.dto.Member;
 import app.spring.third.service.LoginService;
+import app.spring.third.service.MemberService;
 import app.spring.third.service.NaverService;
+import app.spring.third.service.ReservationService;
 
 @Controller
 public class HomeController {
@@ -22,15 +27,19 @@ public class HomeController {
 	private LoginService loginService;			
 	@Autowired
 	private NaverService naverService;			
+	@Autowired 
+	private MemberService memberService;
+	@Autowired
+	private ReservationService reservationService;
 	
 	
 	//홈으로 이동
-	@GetMapping("/")//http://localhost:8081/myapp/
+	@GetMapping("/")
 	public String home() {
 		return "home";
 	}
 	
-	//로그인 폼으로 이동("http://localhost:8081/myapp/login")
+	
 	@GetMapping("login")
 	public void login(HttpSession session, Model model) throws Exception {
 		//네이버 간편가입 위해서 apiURL얻어오기 
@@ -65,15 +74,62 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
-	//객실관리 창으로 이동
-	@GetMapping("room_management")
-	public void room_management(HttpSession session, Model model) {
-	}
-
-	//객실관리 창으로 이동
-	@GetMapping("member_management")
-	public void member_management(HttpSession session, Model model) {
-	}
+	// page
+		@GetMapping("room_management")
+		public void room_management() {
+			System.out.println("Get Page");
+			
+			
+		}
+		
+		// 방 처리할 confirm 목록
+		@GetMapping("/room_management/room_confirm")
+		public String roomconfirm(HttpSession session, Model model) {
+			System.out.println("RoomConfirm");
+			List<Map<String, Object>> mlist =reservationService.getConfirm();
+			System.out.println(mlist);
+			model.addAttribute("confirm", mlist);
+			return "room_confirm_management";
+		}
+		
+		@PostMapping("/room_management/room_confirm")
+		public String roomconfirmcheck(RedirectAttributes rattr, HttpSession session, @RequestParam String reserv_num) {
+			System.out.println("파라미터"+reserv_num);
+			 reservationService.upreserv(reserv_num);
+			rattr.addFlashAttribute("msg", "예약확인완료");
+			return "redirect:/room_management/room_confirm";
+		}
+		
+		
+		
+		
+		//객실관리  ajx
+		@ResponseBody
+		@GetMapping("Allreserv")
+		public List<Map<String, Object>> room_management(HttpSession session, Model model) {
+			System.out.println("ALlreserva");
+			
+			//1. 전체 리스트
+			List<Map<String, Object>> mlist = reservationService.getAllreserv();
+			System.out.println("전체 예약 리스트"+mlist);
+		
+			return mlist;
+		}
+		
+		
+		// 멤버관리 - 관리자
+		@GetMapping("member_management")
+		public String member_management(Model model) {
+			System.out.println("member_management 접근");
+			
+			
+			List<Member> mlist = memberService.AllUser();
+				model.addAttribute("mlist", mlist);
+				System.out.println("List"+mlist);
+			return "member_management";
+		}
+		
+		
 	
 	
 

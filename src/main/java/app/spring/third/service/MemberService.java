@@ -1,5 +1,7 @@
 package app.spring.third.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import app.spring.third.advice.ErrorCode;
@@ -18,6 +20,8 @@ public interface MemberService {
 	 int delete(String member_id) throws Exception;
 
 	ErrorCode emailCheck(String email);
+	
+	List<Member> AllUser();
 
 
 	

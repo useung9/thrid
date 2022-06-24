@@ -1,6 +1,7 @@
 package app.spring.third.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -82,7 +83,7 @@ public class MemberServiceImpl implements MemberService{
 		//보낼 이메일 내용
 		StringBuffer content = new StringBuffer();
 		content.append(member_id + "님 반갑습니다. 아래 링크를 클릭해 주세요<br>");
-		content.append("<a href='http://localhost:8081/myapp/member/emailConfirm?authCode="+authCode+"&member_id="+member_id+"'>이메일인증확인</a>");
+		content.append("<a href='http://localhost:8081/third/member/emailConfirm?authCode="+authCode+"&member_id="+member_id+"'>이메일인증확인</a>");
 		
 		//보낼메일 및 메시지 객체 생성
 		MimeMessage message = mailsender.createMimeMessage();
@@ -134,6 +135,13 @@ public class MemberServiceImpl implements MemberService{
 		}
 		//이메일이 존재할 경우
 		return ErrorCode.SUCCESS_EMAIL_NOEXITXT;
+	}
+
+
+	@Override
+	public List<Member> AllUser() {
+		System.out.println("사용자 목록 불러오기");
+		return memberRepository.AllUser();
 	}
 
 	

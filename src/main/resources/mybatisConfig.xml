@@ -10,6 +10,10 @@
 	</settings>
 	<!-- 매퍼 resultType의 알리아스 --> 
 	<typeAliases>
+		<typeAlias type="app.spring.third.dto.Reservation" alias="Reservation"/>
+		<typeAlias type="app.spring.third.dto.Room" alias="Room"/>
+		<typeAlias type="app.spring.third.dto.RoomNReserv" alias="RoomNReserv"/>
+		<typeAlias type="app.spring.third.dto.RoomFile" alias="RoomFile"/>
 		<typeAlias type="app.spring.third.dto.Member" alias="Member"/>
 	</typeAliases>
 

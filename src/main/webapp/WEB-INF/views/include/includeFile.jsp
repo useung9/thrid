@@ -10,6 +10,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Core theme JS-->
+<script src="${path}/resources/js/scripts.js"></script>
+
 <!-- 제이쿼리 연결 -->
 <!-- 슬라이드 --> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
@@ -17,7 +20,8 @@
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     
 <!-- css -->
-<link href="${path}/resources/css/styles.css" rel="stylesheet" />
+<%-- <link href="${path}/resources/css/styles.css" rel="stylesheet" /> --%>
+<link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
 <script>
 	//값이 있으면 true / 없으면 false

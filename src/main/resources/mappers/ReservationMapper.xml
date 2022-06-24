@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="app.spring.third.ReservationMapper">
+	<insert id="insert_reservation">
+		insert into reservation(reservation_idx, room_idx,re_status, re_startdate,re_enddate,member_id,re_personnel)
+		values(reservation_idx.nextval, #{room_idx},#{re_status},#{re_startdate}, #{re_enddate},#{member_id},#{re_personnel})
+	</insert>
+
+
+	<select id="getuserNreserv" resultType="Map">
+		select re.member_id,
+		ro.room_name, re.re_startdate, re.re_enddate
+		from reservation re inner join room ro on re.room_idx = ro.room_idx
+	</select>
+
+	<select id="getreserv" resultType="Map">
+		select re.reservation_idx,  ro.room_name, re.re_startdate, re.re_enddate, re.re_status
+		from reservation re inner join room ro on re.room_idx = ro.room_idx
+        where re.member_id = #{userid}
+	</select>
+	<!-- 전체 예약내역 -->
+	<select id="getAllreservation" resultType="Map">
+		select re.reservation_idx,  ro.room_name, re.re_startdate, re.re_enddate, re.re_status, re.member_id
+		from reservation re inner join room ro on re.room_idx = ro.room_idx
+	</select>
+	<!-- 삭제 -->
+	<delete id="deluserNreserv">
+		delete from reservation 
+        where member_id = #{userid} and reservation_idx=#{reservation_idx}
+	</delete>
+	
+	<select id="getonereservation" resultType="Reservation">
+		select * from reservation where reservation_idx=#{idx}
+	</select>
+	
+	
+	<!-- 업데이트 -->
+	<update id="updatereservation" >
+		update reservation
+        set room_idx = #{room_idx},
+        	re_startdate = #{re_startdate},
+        	re_enddate = #{re_enddate}
+        where reservation_idx=#{reservation_idx}
+	</update>
+	
+	
+	
+	<!-- 컨펌 필요목록 -->
+	<select id="getConfirm" resultType="map">
+		select re.reservation_idx,  ro.room_name, re.re_startdate, re.re_enddate, re.re_status, re.member_id
+		from reservation re inner join room ro on re.room_idx = ro.room_idx  
+        where re_status='n' and re_startdate >= sysdate order by re.re_startdate asc
+	</select>
+	
+	<update id="upreserv">
+		update reservation
+		set re_status = 'y'
+		where reservation_idx=#{reserv_num}
+	</update>
+</mapper>

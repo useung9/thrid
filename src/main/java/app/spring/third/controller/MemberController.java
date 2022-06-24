@@ -22,7 +22,6 @@ import app.spring.third.advice.ErrorCode;
 import app.spring.third.dto.Member;
 import app.spring.third.service.MemberService;
 
-					//http://localhost:8081/myapp/member/join
 @Controller	
 @RequestMapping("member")
 
@@ -53,7 +52,6 @@ public class MemberController {
 			
 		}
 		 
-		//emailConfirm 처리 메소드(http://localhost:8081/myapp/member/emailConfirm?authCode=046732)
     	@GetMapping("emailConfirm")
 		public String emailConfirm(@RequestParam String authCode, @RequestParam String member_id,
 				HttpSession session, RedirectAttributes rattr ) { 
@@ -110,6 +108,9 @@ public class MemberController {
 			int cnt = memberService.delete(member_id);
 			rattr.addAttribute("cnt", cnt);
 			rattr.addFlashAttribute("msg", "탈퇴되었습니다. 다음에 또 찾아주세요.");
+			
+			//세션지우기
+			session.invalidate();
 			return "redirect:/";
 		}
 		
