@@ -19,53 +19,51 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import app.spring.third.dto.ComuReply;
+import app.spring.third.service.CreplyService;
 
-
-
-import app.spring.third.dto.Reply;
-import app.spring.third.service.ReplyService;
 
 @RestController
 
-@RequestMapping("reply")
-public class ReplyController {
+@RequestMapping("comureply")
+public class CreplyController {
 	@Autowired
-	private ReplyService replyService;
+	private CreplyService creplyService;
 	
 	
 	//값 자체를 리턴
 	@PostMapping("/")
-	public String add(@RequestBody Reply reply,HttpServletRequest request ) {
+	public String add(@RequestBody ComuReply creply,HttpServletRequest request ) {
 		
-		replyService.insert(reply);
+		creplyService.insert(creply);
 		return "add success!";
 	}
 	
 	//댓글의 리스트
-	@GetMapping("list/{board_idx}")
-	public List<Reply> list(@PathVariable int board_idx) {
-		List<Reply> rlist = replyService.selectList(board_idx);
-		System.out.println(rlist);
+	@GetMapping("list/{cboard_idx}")
+	public List<ComuReply> list(@PathVariable int cboard_idx) {
+		List<ComuReply> crlist = creplyService.selectList(cboard_idx);
+		System.out.println(crlist);
 		
-		return rlist;
+		return crlist;
 	}
 	
 	
 	//댓글삭제
 	
-		@DeleteMapping("{reply_idx}")
-		public String remove (@PathVariable int reply_idx) {
-			replyService.delete(reply_idx);
+		@DeleteMapping("{creply_idx}")
+		public String remove (@PathVariable int creply_idx) {
+			creplyService.delete(creply_idx);
 			return "remove ok!";
 		}
 		
 		//댓글수정
 		
 		@PutMapping("/")
-		public String modify (@RequestBody Reply reply, HttpServletRequest request) {
+		public String modify (@RequestBody ComuReply creply, HttpServletRequest request) {
 			
 			
-			replyService.update(reply);
+			creplyService.update(creply);
 			return "modify ok!";
 		}
 		

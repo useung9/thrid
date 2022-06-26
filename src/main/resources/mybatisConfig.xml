@@ -15,6 +15,11 @@
 		<typeAlias type="app.spring.third.dto.RoomNReserv" alias="RoomNReserv"/>
 		<typeAlias type="app.spring.third.dto.RoomFile" alias="RoomFile"/>
 		<typeAlias type="app.spring.third.dto.Member" alias="Member"/>
+		<typeAlias type="app.spring.third.dto.ReviewBoard" alias="ReviewBoard"/>
+		<typeAlias type="app.spring.third.dto.ComuBoard" alias="ComuBoard"/>
+		<typeAlias type="app.spring.third.dto.Reviewfile" alias="Reviewfile"/>
+		<typeAlias type="app.spring.third.dto.Reply" alias="Reply"/>
+		<typeAlias type="app.spring.third.dto.ComuReply" alias="ComuReply"/>
 	</typeAliases>
 
 </configuration>  

@@ -1,6 +1,9 @@
 package app.spring.third.dto;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ReviewBoard {
 	private int board_idx;
@@ -12,6 +15,18 @@ public class ReviewBoard {
 	private Date board_modidate;
 	private int board_views;
 	private int board_likes;
+	
+	private List<MultipartFile> files;
+	
+	
+	
+	
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
+	}
 	public ReviewBoard(int board_idx, String room_name, String board_id, String board_title, String board_content,
 			Date board_regidate, Date board_modidate, int board_views, int board_likes) {
 		super();
@@ -87,8 +102,9 @@ public class ReviewBoard {
 		return "ReviewBoard [board_idx=" + board_idx + ", room_name=" + room_name + ", board_id=" + board_id
 				+ ", board_title=" + board_title + ", board_content=" + board_content + ", board_regidate="
 				+ board_regidate + ", board_modidate=" + board_modidate + ", board_views=" + board_views
-				+ ", board_likes=" + board_likes + "]";
+				+ ", board_likes=" + board_likes + ", files=" + files + "]";
 	}
+	
 	
 	
 }
