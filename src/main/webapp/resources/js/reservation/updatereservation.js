@@ -63,7 +63,11 @@ $(document).ready(function() {
 		
 		var rowData = new Array();
 		var tdArr = new Array();
+<<<<<<< HEAD
 		var checkbox = $("input[name=room_idx]:checked");
+=======
+		var checkbox = $("input[name=chk]:checked");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		// 체크된 체크박스 값을 가져온다
 		checkbox.each(function(i) {
 
@@ -91,8 +95,13 @@ $(document).ready(function() {
 			console.log("roominfo : " + roominfo);
 
 			document.getElementById('frm_reserv').method = 'post';
+<<<<<<< HEAD
 			//document.getElementById('frm_reserv').action = path+'/Reservation/updatereservation?roominfo=' + roominfo;
 			document.getElementById('frm_reserv').action = path+'/reservation/updatereservation';
+=======
+			document.getElementById('frm_reserv').action = path
+					+ '/Reservation/updatereservation?roominfo=' + roominfo;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 			document.getElementById('frm_reserv').submit();
 		});
 	}

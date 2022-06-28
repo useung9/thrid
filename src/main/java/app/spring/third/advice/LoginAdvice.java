@@ -24,7 +24,14 @@ public class LoginAdvice {
 	//새로고침을 했을때, 조회를 눌렀을 때 잘 뜨는지 확인(엔터쳤을땐 매개변수가 없고 조회 누를땐 매개변수가 있다)
 	//확인 후 뷰에 벨류값을 추가하면 url과 콘솔에 값이 담기는 걸 볼 수 있다.
 	("execution(*  app.spring.third.repository.*.*(..))")//execution을 실행하라. 패키지명 넣었다.
+<<<<<<< HEAD
 										
+=======
+									//logger를 쓰지 않고도 서비스를 넣고 싶으면 서비시를, 레파지토리를 찍고 싶으면 레파지토리를 넣으면 된다.
+									//(*  com.mycompany.myapp.Controller.HomeController.*(..)")
+									//이렇게 하면 홈컨트롤러로 범위가 줄어든다.
+									//파라미터로 읽어들이는 것들	
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	public void beforeLog(JoinPoint jp) {//화살표가 뜬걸 확인할 수 있다. 실행 전에 끼워넣겠다. 모든 컨트롤러가 매개변수로 작동한다. (홈컨트롤러는 화살표가 안으로 들어간걸 볼 수 있는데, 
 	//로그인이 진행되기 전에 얘가 먼저 띄워진다는 뜻이다. 다른 컨트롤러 모두 마찬가지. 이를 포인트컷이라 한다.
 		System.out.println("매개변수"+jp.getSignature().toShortString() + Arrays.toString(jp.getArgs()	));//자동으로 실행되었는지 아닌지 확인
@@ -32,7 +39,11 @@ public class LoginAdvice {
 	
 	//리턴값을 출력할때 쓰는 매개변수 
 	//Object obj: 리턴값
+<<<<<<< HEAD
 	@AfterReturning(pointcut = "execution(* app.spring.third.repository.*.*(..))", returning = "obj")
+=======
+	@AfterReturning(pointcut = "execution(* org.company.myapp.repository.*.*(..))", returning = "obj")
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	//리턴값을 넘겨서 저장해야하는 기능이 필요하기 떄문에 pointcut 작성, returning = "obj"리턴값을 어디에 지정할지 작성한다.
 	//@AfterReturning:before의 컨트롤러의 앞의 끼워드는 표시와는 달리 after는 밑으로 향한것을 볼 수 있다.
 	//리턴값이 없이 보이드면 오브젝트가 없기 때문에 찍을 수 없다.(getEmailauth의 경우 인증시 오류가 난다. 때문에 널체크 해주어야 한다.)
@@ -49,6 +60,10 @@ public class LoginAdvice {
 	//위의 것들은 직접 실행하는게 아니라 위의 값만 가로채서 찍어주는 역할을 하지만, 아래는
 	//객체를 통해 직접 실행하기 때문에 반환값이 있다.
 	//insert를 통해 실행되고 반환하는 값을 처리해야하기 때문이다.
+<<<<<<< HEAD
+=======
+	//@Around("execution(*  com.spring.myapp.service.*.*(..))")//서비스를 대상으로 얼마나 시간이 소요되는지 체크
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable {
 		//시작시간 
 		

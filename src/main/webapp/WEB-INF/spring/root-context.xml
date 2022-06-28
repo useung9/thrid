@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
@@ -12,6 +13,17 @@
 		<property name="fileEncoding" value="utf-8"/>
 	</bean>
 	
+=======
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- 데이터 소스 -->
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}"/>
 		<property name="url" value="${database.url}"/>
@@ -19,6 +31,7 @@
 		<property name="password" value="${database.password}"/>
 	</bean>
 	
+<<<<<<< HEAD
 	
 	
 	
@@ -32,15 +45,34 @@
 	
 	<!-- 마이바티스 세션 생성 -->
 	<!-- sqlSessionTemplate:객체관리를 알아서 해준다 -->
+=======
+	<!-- 마이바티스 factory객체 생성 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:/mybatisConfig.xml"/>
+		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	<!-- 마이바티스 세션 생성 -->
+	<!-- SqlSessionTemplate:객체관리를 해준다 -->
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	
+<<<<<<< HEAD
 	<!--파일저장경로(savedir)의 객체 생성 요청-->
 	<!--new String("D:/kgr/savedir")-->
 	<!--이런 객체를 사용하기 위해서는 오토와이어드 하면 된다. memberserviceimpl-->
 	<bean id="savedir" class="java.lang.String"><!--기본 패키지이기 때문에 임포트 하지 않고 사용-->
 		<constructor-arg value="D:/kgr/savedir"/>
+=======
+	<!-- 컨트롤러와 상관없는 설정들 -->	
+	<!-- 환경설정 객체 만들기 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:/application.properties"/>
+		<property name="fileEncoding" value="utf-8"/>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	</bean>
 	
 	<!--암호화 객체-->
@@ -73,3 +105,10 @@
 	<!--트랜젝션 어노테이션 사용 가능하게 추가(네임스페이스에서 tx체크)-->
 	<tx:annotation-driven/>
 </beans>
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a

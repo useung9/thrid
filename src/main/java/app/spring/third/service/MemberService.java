@@ -19,8 +19,13 @@ public interface MemberService {
 
 	 int delete(String member_id) throws Exception;
 
+<<<<<<< HEAD
 	ErrorCode emailCheck(String email);
 	
+=======
+	 
+	 // 사용자 목록
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	List<Member> AllUser();
 
 

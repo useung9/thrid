@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+<<<<<<< HEAD
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
@@ -15,6 +16,13 @@
 		<beans:property name="fileEncoding" value="utf-8"/>
 	</beans:bean>
 	
+=======
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
@@ -22,9 +30,15 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
+<<<<<<< HEAD
 	<!-- 파일저장경로 (윈도우)-->
 	<resources mapping="/savedir/**" location="file:///D:/kgr/savedir/" />
 
+=======
+
+<!-- 파일저장경로 (윈도우)-->
+	<resources mapping="/savedir/**" location="file:///C:/Users/견디자/Desktop/files/플젝/" />
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -38,7 +52,10 @@
 		<beans:property name="maxUploadSize" value="10485760"/> <!-- 최대사이즈 10mb : 1024*1024*10 -->
 	</beans:bean>
 	
+<<<<<<< HEAD
 	<!-- aop설정을 통해서 자동으로 proxy객체 생성 : 로깅출력, 트랜잭션관리-->
 	<aop:aspectj-autoproxy/>
 	
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 </beans:beans>

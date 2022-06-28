@@ -1,11 +1,18 @@
 //회원가입 js
 
+<<<<<<< HEAD
 //로그인 버튼을 클릭했을 때
+=======
+
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 function joinCheck(e){
 	e.preventDefault(); //기본
 	const username = document.getElementById('username');
 	const email = document.getElementById('email');
+<<<<<<< HEAD
 	const chkEmail = document.getElementById('chkEmail');
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	const passwd = document.getElementById('passwd');
 	const passwdConfirm = document.getElementById('passwdConfirm');
 	const phone = document.getElementById('phone');
@@ -44,6 +51,7 @@ function joinCheck(e){
 		passwdConfirm.focus();
 		return ;
 	}
+<<<<<<< HEAD
 
 	if (!chkEmail.checked){
 		alert('이메일 체크를 진행해 주세요');
@@ -51,10 +59,13 @@ function joinCheck(e){
 	}
 	
 	
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	
 	document.getElementById('frmJoin').submit();
 	
 	
+<<<<<<< HEAD
 }	
 
 //이메일 중복버튼을 클릭했을 때 
@@ -81,3 +92,11 @@ function emailCheck(e, path){
 	})
 	.catch(console.error);
 }
+=======
+	
+	
+	
+	
+	
+}	
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a

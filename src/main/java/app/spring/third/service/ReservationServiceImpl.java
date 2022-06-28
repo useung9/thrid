@@ -6,14 +6,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
 
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.spring.third.dto.Del_userNreserv;
 import app.spring.third.dto.Reservation;
+<<<<<<< HEAD
 import app.spring.third.repository.ReservationRepository;
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import app.spring.third.repository.ReservationRepositoryImpl;
 
 @Service
@@ -21,6 +27,7 @@ public class ReservationServiceImpl implements ReservationService{
 
 	
 	@Autowired
+<<<<<<< HEAD
 	private ReservationRepository reservationrepo;
 	
 	@Autowired
@@ -39,6 +46,31 @@ public class ReservationServiceImpl implements ReservationService{
 		// 결과 담는 용도
 		List<Map<String, Object>> result = new ArrayList<Map<String,Object>>();
 	
+=======
+	private ReservationRepositoryImpl reservationrepo;
+	
+	@Autowired
+	private RoomServiceImpl roomServicerepo;
+	
+	// 예약등록
+	@Override
+	public int insert(Reservation reservation, String roominfo) {
+		
+		//return reservationrepo.insert(reservation);
+		// 사용자 예약 현황
+		List<Map<String, Object>> userNreserv = reservationrepo.getuserNreserv();
+		
+		// 방 번호 구하기 
+		int room_idx =roomServicerepo.getroom_idx(roominfo);
+		reservation.setRoom_idx(room_idx);
+		
+		// 결과 담는 용도
+		List<Map<String, Object>> result = new ArrayList<Map<String,Object>>();
+		Map<String, Object> resultmap =new HashMap<String, Object>();
+
+		// 날짜 비교용
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		
 		for(Map<String, Object> map : userNreserv) {
 			System.out.println("사용자 아이디 : "+map.get("MEMBER_ID"));
@@ -46,15 +78,29 @@ public class ReservationServiceImpl implements ReservationService{
 			System.out.println("예약 날짜"+map.get("RE_STARTDATE"));
 			System.out.println("퇴소 날짜"+map.get("RE_ENDDATE"));
 			//예약 날짜가 동일하다면 && 방번호 동일 유무 확인
+<<<<<<< HEAD
 			if(reservation.getRe_startdate() == map.get("RE_STARTDATE") && reservation.getRoom_idx() == (int) map.get("ROOM_IDX")){
 				return 1;
 					// 예약 불가 다른사람 예약
+=======
+			if(reservation.getRe_startdate() == map.get("RE_STARTDATE") && roominfo.equals(map.get("ROOM_NAME").toString())){
+				
+				
+					return 1;
+					// 예약 불가 다른사람 예약
+				
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 			}
 		
 		}
 		
+<<<<<<< HEAD
 		
 		
+=======
+		reservation.setMember_id("1");
+		reservation.setRe_status("y");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		reservation.setRe_personnel(3);
 		// 파라미터로 넘어온 값과  저장된 사용자 예약 현황을 비교한다.
 		System.out.println(reservation); 
@@ -80,6 +126,7 @@ public class ReservationServiceImpl implements ReservationService{
 
 	// 회원 예약 취소
 	@Override
+<<<<<<< HEAD
 	public void delreservation(List<String> idx, String userid) {
 		// TODO Auto-generated method stub
 		System.out.println("파라미터"+idx);
@@ -98,6 +145,18 @@ public class ReservationServiceImpl implements ReservationService{
 		 for(Del_userNreserv del : dellist) {
 		 reservationrepo.delreservation(del);
 		 }
+=======
+	public void delreservation(List<String> map, String userid) {
+		// TODO Auto-generated method stub
+		 Del_userNreserv del = new Del_userNreserv();
+		 List<Del_userNreserv> dellist = null;
+		 for(String reserv_id : map) {
+			 del.setReservation_idx(reserv_id);
+			 del.setUserid(userid);
+			 dellist.add(del);
+		 }
+		reservationrepo.delreservation(dellist);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	}
 	// 예약정보 1건
 	@Override
@@ -109,7 +168,12 @@ public class ReservationServiceImpl implements ReservationService{
 	@Override
 	public int updatereservation(Reservation reservation, String roominfo) {
 		// 방 번호 구하기 
+<<<<<<< HEAD
 		
+=======
+		int room_idx =roomServicerepo.getroom_idx(roominfo);
+		reservation.setRoom_idx(room_idx);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		
 		int cnt = reservationrepo.updatereservation(reservation);
 		 

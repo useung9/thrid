@@ -73,7 +73,11 @@ function btnclick(path, event){
 		
 		var rowData = new Array();
 		var tdArr = new Array();
+<<<<<<< HEAD
 		var checkbox = $("input[name=room_idx]:checked");
+=======
+		var checkbox = $("input[name=chk]:checked");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		
 		// 체크된 체크박스 값을 가져온다
 		checkbox.each(function(i) {
@@ -93,11 +97,16 @@ function btnclick(path, event){
 			//var person = td.eq(3).options[target.selectedIndex].value;
 			var person = td.eq(3).text();
 		
+<<<<<<< HEAD
 			
+=======
+			alert($("#maxperson option:selected").val());
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 			
 			
 					
 			
+<<<<<<< HEAD
 
 			
 			tdArr.push(roominfo);
@@ -108,6 +117,19 @@ function btnclick(path, event){
 			document.getElementById('frm_reserv').method='post';
 
 			document.getElementById('frm_reserv').action=path+'/reservation/reservation';
+=======
+			// 가져온 값을 배열에 담는다.
+			
+			tdArr.push(roominfo);
+			//tdArr.push(person);
+			
+			console.log("roominfo : " + roominfo);
+			//console.log("person : " + person);
+			document.getElementById('frm_reserv').method='post';
+			//document.getElementById('frm_reserv').action=path+'/Reservation/reservation?roominfo='+roominfo+'?re_personnel='+id;
+			document.getElementById('frm_reserv').action=path+'/Reservation/reservation?roominfo='+roominfo;
+			//document.getElementById('frm_reserv').action=path+'/Reservation/reservation';
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 			document.getElementById('frm_reserv').submit();
 			
 		

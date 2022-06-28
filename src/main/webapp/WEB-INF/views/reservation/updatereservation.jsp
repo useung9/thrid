@@ -27,7 +27,11 @@
 
 
 	<!-- Responsive navbar-->
+<<<<<<< HEAD
 	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+=======
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		<div class="container">
 			<a class="navbar-brand" href="#!">Start Bootstrap</a>
 			<button class="navbar-toggler" type="button"
@@ -46,9 +50,14 @@
 				</ul>
 			</div>
 		</div>
+<<<<<<< HEAD
 	</nav> -->
 
 	<%@ include file="../header.jsp" %>
+=======
+	</nav>
+
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 	<div class="d-inline-flex" id="wrapper">
 
@@ -63,7 +72,11 @@
 		</div>
 		
 		<div id="content">
+<<<<<<< HEAD
 			<form id="frm_reserv" action="${path}/reservation/updatereservation"
+=======
+			<form id="frm_reserv" action="${path}/Reservation/updatereservation"
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 				method="post">
 				<div>
 					<span>입실</span> 
@@ -86,11 +99,21 @@
 						<c:forEach var="info" items="${roomNroomfile}">
 							
 							<tr>
+<<<<<<< HEAD
 								<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}"></td>
 								<td id="imgtd">
 								<img src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
 									height="50"></td>
 								<td><span> ${info.ROOM_NAME}</span></td>
+=======
+								<td><input type="radio" name="chk"></td>
+								<td id="imgtd"><img
+									src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
+									height="50"></td>
+								<td>${info.ROOM_NAME}</td>
+
+								<td></td>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 							</tr>
 						</c:forEach>
 					</tbody>

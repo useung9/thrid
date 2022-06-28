@@ -1,6 +1,9 @@
 	package app.spring.third.controller;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,17 +14,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+=======
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import app.spring.third.advice.ErrorCode;
 import app.spring.third.dto.Member;
 import app.spring.third.service.MemberService;
 
+<<<<<<< HEAD
+=======
+					//http://localhost:8081/myapp/member/join
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 @Controller	
 @RequestMapping("member")
 
@@ -52,6 +65,10 @@ public class MemberController {
 			
 		}
 		 
+<<<<<<< HEAD
+=======
+		//emailConfirm 처리 메소드(http://localhost:8081/myapp/member/emailConfirm?authCode=046732)
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
     	@GetMapping("emailConfirm")
 		public String emailConfirm(@RequestParam String authCode, @RequestParam String member_id,
 				HttpSession session, RedirectAttributes rattr ) { 
@@ -108,6 +125,7 @@ public class MemberController {
 			int cnt = memberService.delete(member_id);
 			rattr.addAttribute("cnt", cnt);
 			rattr.addFlashAttribute("msg", "탈퇴되었습니다. 다음에 또 찾아주세요.");
+<<<<<<< HEAD
 			
 			//세션지우기
 			session.invalidate();
@@ -126,5 +144,11 @@ public class MemberController {
 			
 			return map;
 		}
+=======
+			return "redirect:/";
+		}
+		
+		
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 	}

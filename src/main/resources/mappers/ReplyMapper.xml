@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="app.spring.third.ReplyMapper">
+<<<<<<< HEAD
 	<insert id="insert">
   		INSERT INTO reply(reply_idx, board_idx ,reply_id, reply_content, restep, relevel)
 		VALUES(rr_seq.nextval,#{board_idx}, #{reply_id}, #{reply_content},#{restep},#{relevel})
@@ -33,6 +34,11 @@
 		WHERE board_idx = #{board_idx}
 		AND restep >= #{restep}
   	</update>
+=======
+	
+	
+
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 		
   </mapper>

@@ -15,7 +15,11 @@
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 <script type="text/x-handlebars-template" id="template_source">
+<<<<<<< HEAD
 	<h3>전체 예약 현황</h3>
+=======
+	//전체 리스트
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	{{#each .}}
 		
 		<table id="roomtbl">
@@ -41,7 +45,11 @@
 	{{/each}}
 </script>
 <script type="text/x-handlebars-template" id="template_source2">
+<<<<<<< HEAD
 	
+=======
+	//전체 리스트
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	{{#each .}}
 		
 		<table id="roomtbl">

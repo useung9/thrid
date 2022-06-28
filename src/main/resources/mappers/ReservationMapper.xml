@@ -5,8 +5,16 @@
 
 <mapper namespace="app.spring.third.ReservationMapper">
 	<insert id="insert_reservation">
+<<<<<<< HEAD
 		insert into reservation(reservation_idx, room_idx,re_status, re_startdate,re_enddate,member_id,re_personnel)
 		values(reservation_idx.nextval, #{room_idx},#{re_status},#{re_startdate}, #{re_enddate},#{member_id},#{re_personnel})
+=======
+		insert into reservation(reservation_idx, room_idx,
+		re_status, re_startdate,re_enddate,member_id,re_personnel)
+		values(reservation_idx.nextval, #{room_idx},
+		#{re_status},#{re_startdate}, #{re_enddate},#{member_id},
+		#{re_personnel})
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	</insert>
 
 

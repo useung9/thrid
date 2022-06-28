@@ -55,8 +55,14 @@
 			<%@ include file="./calendar.jsp"%>
 		</div>
 		<div id="content">
+<<<<<<< HEAD
 			<div align="center">
 				<form id="frm_reserv" action="${path}/reservation/reservation" method="post">
+=======
+			
+			<div align="center">
+				<form id="frm_reserv" action="${path}/Reservation/reservation" method="post">
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 					
 					<div class="dateselect">
 						<span class="day">입실</span> <input type="date" class="startdate" name="re_startdate"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -76,9 +82,16 @@
 						<tbody>
 							<c:forEach var="info" items="${roomNroomfile}">
 								<tr>
+<<<<<<< HEAD
 									<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}" ></td>
 									<td id="imgtd">
 										<img src="${path}/resources/image/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
+=======
+									<td><input type="radio" name="chk"></td>
+									<td id="imgtd"><img
+										src="${path}/savedir/${info.ROOMFILE_FILENAME}" width="150"
+										height="50"></td>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 									<td >${info.ROOM_NAME}</td>
 									
 						
@@ -92,6 +105,10 @@
 					</div>
 				</form>
 			</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		</div>
 	</div>
 

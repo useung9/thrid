@@ -12,6 +12,7 @@ public enum ErrorCode {
 	SUCCESS_LOGIN(0, "환영합니다."),
 	ERROR_JOIN_ID_EXIST(1,"이미 등록된 아이디 입니다" ),
 	SUCCESS_JOIN(0,"이메일 인증을 진행해 주세요" ),
+<<<<<<< HEAD
 	SUCCESS_EMAILAUTH(0,"이메일 인증이 완료 되었습니다" ),
 	ERROR_EMAILAUTH(1,"인증코드가 일치하지 않습니다" ),
 	ERROR_NO_NAVER_JOIN(1, "네이버 간편가입 회원이 아닙니다"),
@@ -20,6 +21,14 @@ public enum ErrorCode {
 	ERROR_NAVERAUTH(1, "네이버 인증이 유효하지 않습니다"),
 	ERROR_EMAIL_EXIT(0, "사용 가능한 이메일 입니다"),
 	SUCCESS_EMAIL_NOEXITXT(1, "이미 사용중인 이메일 입니다");
+=======
+	SUCCESS_EMAILAUTH(0,"이메일 인증이 완료 되었습니다." ),
+	ERROR_EMAILAUTH(1,"인증코드가 일치하지 않습니다." ),
+	ERROR_NO_NAVER_JOIN(1, "네이버 간편가입 회원이 아닙니다."),
+	SUCCESS_NAVER_LOGIN(0, "네이버 간편가입 로그인 완료."),
+	SUCCESS_NAVER_JOIN(0, "간편가입이 완료 되었습니다."),
+	ERROR_NAVERAUTH(1, "네이버 인증이 유효하지 않습니다.");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 	
 	private int code;

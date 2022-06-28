@@ -6,6 +6,7 @@ function imgclick(path,info){
 	window.open(url,name, option);
 }
 
+<<<<<<< HEAD
 $(function() {
 	   $('.bxslider').bxSlider({
 	      slideWidth: 600,
@@ -15,3 +16,5 @@ $(function() {
 	      stopAutoOnclick: true,
 	   });
 	});
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a

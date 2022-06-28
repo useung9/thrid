@@ -64,7 +64,11 @@ public class NaverServiceImpl implements NaverService{
 		//네이버 로그인을 위한 apiUrl과 state 리턴
 		Map<String, String> rmap = new HashMap<>();
 	    String clientId = "PwNXcuaPKMBEhstThs8g";//애플리케이션 클라이언트 아이디값";
+<<<<<<< HEAD
 	    String redirectURI = URLEncoder.encode("http://localhost:8081/third/naverCallback", "UTF-8"); //나의 콜백주소
+=======
+	    String redirectURI = URLEncoder.encode("http://localhost:8081/myapp/naverCallback", "UTF-8"); //나의 콜백주소
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	    //인증값(state)생성
 	    SecureRandom random = new SecureRandom();
 	    String state = new BigInteger(130, random).toString();
@@ -86,7 +90,11 @@ public class NaverServiceImpl implements NaverService{
 	    String clientSecret = "3H1vZyicAE";//애플리케이션 클라이언트 시크릿값";
 	    String accesstoken = "";
 	    try {
+<<<<<<< HEAD
 		    String redirectURI = URLEncoder.encode("http://localhost:8081/third/naverCallback", "UTF-8");
+=======
+		    String redirectURI = URLEncoder.encode("http://localhost:8081/myapp/naverCallback", "UTF-8");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		    String apiURL;
 		    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
 		    apiURL += "client_id=" + clientId;
