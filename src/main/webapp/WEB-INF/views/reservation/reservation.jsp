@@ -13,7 +13,7 @@
 <title>Heroic Features - Start Bootstrap Template</title>
 <!-- Bootstrap icons-->
 <link rel="icon" type="image/x-icon"
-	href="${path}/resources/images/favicon.ico" />
+	href="${path}/resources/image/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${path}/resources/css/reservstyles.css" rel="stylesheet" />
 
@@ -55,9 +55,8 @@
 			<%@ include file="./calendar.jsp"%>
 		</div>
 		<div id="content">
-			
 			<div align="center">
-				<form id="frm_reserv" action="${path}/Reservation/reservation" method="post">
+				<form id="frm_reserv" action="${path}/reservation/reservation" method="post">
 					
 					<div class="dateselect">
 						<span class="day">입실</span> <input type="date" class="startdate" name="re_startdate"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -77,10 +76,9 @@
 						<tbody>
 							<c:forEach var="info" items="${roomNroomfile}">
 								<tr>
-									<td><input type="radio" name="chk"></td>
-									<td id="imgtd"><img
-										src="${path}/resources/images/${info.ROOMFILE_FILENAME}" width="150"
-										height="50"></td>
+									<td><input type="radio" name="room_idx" value="${info.ROOM_IDX}" ></td>
+									<td id="imgtd">
+										<img src="${path}/resources/image/${info.ROOMFILE_FILENAME}" width="150" height="50"></td>
 									<td >${info.ROOM_NAME}</td>
 									
 						
@@ -94,7 +92,6 @@
 					</div>
 				</form>
 			</div>
-
 		</div>
 	</div>
 

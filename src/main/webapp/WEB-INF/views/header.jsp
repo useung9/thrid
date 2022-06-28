@@ -52,7 +52,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item btn-lg"><a class="nav-link active"
-						aria-current="page" href="${path}/Reservation/">예약</a></li>
+						aria-current="page" href="${path}/reservation/">예약</a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
 						href="${path}/company">찾아오시는 길</a></li>
 					<li class="nav-item btn-lg"><a class="nav-link"
