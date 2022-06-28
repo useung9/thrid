@@ -3,13 +3,22 @@ package app.spring.third.service;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
+import javax.servlet.http.HttpSession;
+
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import app.spring.third.dto.Reservation;
 
 public interface ReservationService{
 
 	
 	// 예약 등록 
+<<<<<<< HEAD
+	int insert(Reservation reservation, HttpSession session);
+=======
 	int insert(Reservation reservation, String roominfo);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	
 	
 	// 사용자 예약현황

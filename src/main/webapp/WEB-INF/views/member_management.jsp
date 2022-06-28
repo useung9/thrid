@@ -25,11 +25,19 @@
 		<tbody>
 			<c:forEach  var="list" items="${mlist}">
 				<tr>
+<<<<<<< HEAD
+					<td>${list.member_id}</td>
+					<td>${list.member_name}</td>
+					<td>${list.member_phone}</td>
+					<td>${list.member_birth}</td>
+					<td>${list.member_regidate}</td>
+=======
 					<%-- <td>${list.MEMBER_ID}</td> --%>
 					<td>${list.MEMBER_NAME}</td>
 					<td>${list.MEMBER_PHONE}</td>
 					<td>${list.MEMBER_BIRTH}</td>
 					<td>${list.MEMBER_REGIDATE}</td>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 				</tr>
 				
 			</c:forEach>

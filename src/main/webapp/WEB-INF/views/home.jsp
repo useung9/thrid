@@ -4,12 +4,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+<meta charset="UTF-8">
+=======
 <meta charset="utf-8" />
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Bootstrap Template</title>
+<<<<<<< HEAD
+<style>
+#wrapper {
+	width: 600px;
+	margin: 0 auto;
+}
+</style>
+<!-- Bootstrap icons-->
+<link rel="icon" type="image/x-icon"
+	href="${path}/resources/images/favicon.ico" />
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 <script type="text/javascript" src="${path}/resources/js/home.js"></script>
 
 </head>
@@ -32,6 +48,25 @@
 							<div class="text-muted fst-italic mb-2">고단한 여행에 지친 당신, 게하
 								어때?</div>
 						</header>
+<<<<<<< HEAD
+
+						<div id="wrapper">
+							<div class="bxslider">
+								<div>
+									<img src="${path}/resources/images/guesthouse1.jpg">
+								</div>
+								<div>
+									<img src="${path}/resources/images/guesthouse3.jpg">
+								</div>
+								<div>
+									<img src="${path}/resources/images/guesthouse2.jpg">
+								</div>
+
+							</div>
+						</div>
+
+
+=======
 					
 						<div class="bxslider">
 							<div>
@@ -45,6 +80,7 @@
 							</div>
 						</div>
 	
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 						<!-- Post content-->
 						<section class="mb-5">
 							<p class="fs-5 mb-4">

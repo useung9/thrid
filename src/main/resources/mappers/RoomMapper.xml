@@ -25,4 +25,12 @@
 		select room_idx from room
 		where room_name =#{room_name}
 	</select>
+<<<<<<< HEAD
+	
+	<!--방 상세보기-->
+	<select id="selectOne" resultType="Room">
+		SELECT * FROM room WHERE room_idx= #{room_idx}
+	</select>
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 </mapper>

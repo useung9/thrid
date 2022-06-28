@@ -26,12 +26,16 @@ public class LoginServiceImpl implements LoginService{//인터페이스를 구�
 	@Override
 	public ErrorCode loginCheck(String member_id, String member_pw, HttpSession session) {
 		Map<String , Object> rmap = new HashMap<>();
+<<<<<<< HEAD
+
+=======
 		//code, msg를 넣어서 보내도록 한다.
 		//0:로그인 완료
 		//1: 이메일 미존재
 		//2:비밀번호 불일치 
 		//3:이메일 미인증
 		
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		//한건조회
 		Member member = memberRepository.selectOne(member_id);
 		//1)//조회했을때 이메일이(회원이) 존재하지 않는다면

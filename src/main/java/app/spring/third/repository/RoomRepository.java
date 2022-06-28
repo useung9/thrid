@@ -15,4 +15,9 @@ public interface RoomRepository {
 	List<Map<String, Object>> roomNroomfile();
 
 	int getroom_idx(String room_name);
+<<<<<<< HEAD
+	
+	Room selectOne(int room_idx);
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 }

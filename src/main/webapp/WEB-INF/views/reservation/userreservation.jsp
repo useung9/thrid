@@ -26,6 +26,8 @@
 
 <body>
 	
+<<<<<<< HEAD
+=======
 	<!-- Responsive navbar-->
 	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
@@ -47,6 +49,7 @@
 			</div>
 		</div>
 	</nav> -->
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	<%@ include file="../header.jsp" %>
 	<!-- Sidebar-->
 	<div class="d-inline-flex" id="wrapper">
@@ -65,8 +68,13 @@
 		<div>	
 		<h3 align="center">내 예약정보 리스트</h3>
 		</div>
+<<<<<<< HEAD
+			<c:if test="${not empty rlist}">
+				<form id="frm_reserv" action = "${path}/reservation/usereservation" method="post">
+=======
 			<c:if test="${not empty mlist}">
 				<form action = "${path}/Reservation/userreservation" method="post">
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 					<table class="statustb">
 						<thead>
 							<tr>
@@ -85,7 +93,11 @@
 										<input type="checkbox" id="box" name="box" value="${list.RESERVATION_IDX}">
 									</td>
 									<td>
+<<<<<<< HEAD
+										<a id="modify_reservation" href="${path}/reservation/updatereservation?idx=${list.RESERVATION_IDX}">${list.RESERVATION_IDX}</a>
+=======
 										<a id="modify_reservation" href="${path}/Reservation/updatereservation?idx=${list.RESERVATION_IDX}">${list.RESERVATION_IDX}</a>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 									</td>
 									<td>
 									<!-- 예약완료 -->
@@ -114,11 +126,18 @@
 					<button class="btnclick" onclick="btnclick('${path}', event)">예약 취소</button>
 				</form>
 			</c:if>
+<<<<<<< HEAD
+			<c:if test="${empty rlist}">
+				<div align="center" style="font-size: 12px">예약된 정보가 없습니다.</div>
+			</c:if>
+		</div>
+=======
 			<c:if test="${empty mlist}">
 				<div align="center" style="font-size: 12px">예약된 정보가 없습니다.</div>
 			</c:if>
 		</div>
 
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	</div>
 </body>
 </html>

@@ -46,7 +46,11 @@
 		</form>
 		</c:if>
 		<c:if test="${empty confirm}">
+<<<<<<< HEAD
+			<h3> 예정된 예약이없습니다.</h3>
+=======
 			<h3> 등록된 회원이 없습니다.</h3>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		</c:if>
 	</div>
 

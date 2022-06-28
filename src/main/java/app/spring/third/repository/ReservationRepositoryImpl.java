@@ -42,7 +42,11 @@ public class ReservationRepositoryImpl implements ReservationRepository{
 
 	// 데이터 삭제
 	@Override
+<<<<<<< HEAD
+	public int delreservation(Del_userNreserv dellist) {
+=======
 	public int delreservation(List<Del_userNreserv> dellist) {
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	return sqlSession.delete(path+".deluserNreserv",dellist);	
 		
 	}
@@ -70,9 +74,16 @@ public class ReservationRepositoryImpl implements ReservationRepository{
 
 
 	// 컨펌 필요목록
+<<<<<<< HEAD
+	@Override
+	public List<Map<String, Object>> getConfirm() {
+		String type="n";
+		return sqlSession.selectList(path+".getConfirm",type);
+=======
 	public List<Map<String, Object>> getConfirm() {
 		String type="n";
 		return sqlSession.selectList(path+".getConfirm");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	}
 
 

@@ -83,7 +83,11 @@ public class MemberServiceImpl implements MemberService{
 		//보낼 이메일 내용
 		StringBuffer content = new StringBuffer();
 		content.append(member_id + "님 반갑습니다. 아래 링크를 클릭해 주세요<br>");
+<<<<<<< HEAD
+		content.append("<a href='http://localhost:8081/third/member/emailConfirm?authCode="+authCode+"&member_id="+member_id+"'>이메일인증확인</a>");
+=======
 		content.append("<a href='http://localhost:8081/myapp/member/emailConfirm?authCode="+authCode+"&member_id="+member_id+"'>이메일인증확인</a>");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		
 		//보낼메일 및 메시지 객체 생성
 		MimeMessage message = mailsender.createMimeMessage();
@@ -126,6 +130,22 @@ public class MemberServiceImpl implements MemberService{
 
 
 	@Override
+<<<<<<< HEAD
+	public ErrorCode emailCheck(String email) {
+		//join에서 이메일 존재 체크 
+		Member member = memberRepository.selectOne(email);
+		if(member==null) {//이메일이 존재하지 않는다면 
+			return ErrorCode.ERROR_EMAIL_EXIT;
+			
+		}
+		//이메일이 존재할 경우
+		return ErrorCode.SUCCESS_EMAIL_NOEXITXT;
+	}
+
+
+	@Override
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	public List<Member> AllUser() {
 		System.out.println("사용자 목록 불러오기");
 		return memberRepository.AllUser();

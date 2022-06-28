@@ -22,7 +22,15 @@
 				</tr>
 				<tr>
 					<th>이메일</th>
+<<<<<<< HEAD
+					<td><input type="email" name="member_id" id="email">
+						<input type="checkbox" id="chkEmail"> 
+						<button type="button" onclick="emailCheck(event, '${path}')">중복체크</button>
+					</td>
+					
+=======
 					<td><input type="email" name="member_id" id="email"></td>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 				</tr>
 				<tr>
 					<th>비밀번호</th>

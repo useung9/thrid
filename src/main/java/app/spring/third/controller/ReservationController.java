@@ -1,7 +1,10 @@
 package app.spring.third.controller;
 
 import java.text.ParseException;
+<<<<<<< HEAD
+=======
 import java.text.SimpleDateFormat;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +13,13 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+<<<<<<< HEAD
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+=======
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +29,27 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+<<<<<<< HEAD
+=======
 import app.spring.third.dto.Member;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 import app.spring.third.dto.Reservation;
 import app.spring.third.service.ReservationServiceImpl;
 import app.spring.third.service.RoomFileService;
 import app.spring.third.service.RoomService;
 
 
+<<<<<<< HEAD
+@RequestMapping("reservation")
+=======
 @RequestMapping("Reservation")
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 @Controller
 public class ReservationController {
 
@@ -50,6 +68,9 @@ public class ReservationController {
 	// 홈
 	@GetMapping("/")
 	public String test(HttpSession session) {
+<<<<<<< HEAD
+		
+=======
 		// 로그인 성공시 세션에 값 넣기
 		Member member = new Member();
 		member.setMember_id("1");
@@ -60,13 +81,18 @@ public class ReservationController {
 		
 
 		System.out.println("member : " + member);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		return "reservation/info";
 	}
 
 	// 기본 정보 페이지
 	@GetMapping("info")
 	public String info() {
+<<<<<<< HEAD
+		
+=======
 		System.out.println("info");
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		return "reservation/info";
 	}
 
@@ -77,11 +103,24 @@ public class ReservationController {
 		System.out.println("세션 값 "+session.getAttribute("member_id"));
 		// 룸정보 + 룸 이미지
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
+<<<<<<< HEAD
+		
+=======
 		System.out.println(roomNroomfile);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		model.addAttribute("roomNroomfile", roomNroomfile);
 		return "reservation/reservationinfo";
 	}
 
+<<<<<<< HEAD
+
+
+	@GetMapping("reservation")
+	public String reservation(Model model, HttpSession session) {
+		// 룸정보 + 룸 이미지
+		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
+		
+=======
 	@GetMapping("infoimg")
 	public String infoimg(@RequestParam String info) {
 		System.out.println("파라미터 : " + info);
@@ -95,6 +134,7 @@ public class ReservationController {
 		
 		// 룸정보 + 룸 이미지
 		List<Map<String, Object>> roomNroomfile = roomService.roomNroomfile();
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		model.addAttribute("roomNroomfile", roomNroomfile);
 
 		return "reservation/reservation";
@@ -102,6 +142,17 @@ public class ReservationController {
 
 	// 예약 신청
 	@PostMapping("reservation")
+<<<<<<< HEAD
+	public String reservation(Reservation reservation, RedirectAttributes rattr, HttpSession session) throws ParseException {
+		System.out.println(session.getAttribute("member_id"));
+		reservation.setMember_id(session.getAttribute("member_id").toString());		
+		
+		reservation.setRe_status("n");
+		
+	
+		  
+		  int cnt = reservationService.insert(reservation, session);
+=======
 	public String reservation(Reservation reservation, @RequestParam String roominfo, RedirectAttributes rattr, HttpSession session) throws ParseException {
 		//@RequestParam String roominfo, @RequestParam String re_startdate, @RequestParam String re_enddate
 		
@@ -126,6 +177,7 @@ public class ReservationController {
 		 */
 		  
 		  int cnt = reservationService.insert(reservation, roominfo);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		  // 정상
 		 if(cnt == 0) { 
 			 rattr.addFlashAttribute("msg","예약이 되었습니다.");
@@ -135,6 +187,10 @@ public class ReservationController {
 			 rattr.addFlashAttribute("msg","이미 예약이 되어있습니다.");
 			 return "reservation";
 		 }
+<<<<<<< HEAD
+		
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	}
 	
 	@GetMapping("userreservation")
@@ -151,6 +207,13 @@ public class ReservationController {
 	// 예약 취소 , 업데이트  선택할수있는곳
 	@PostMapping("userreservation")
 	
+<<<<<<< HEAD
+	public String userreservation(HttpSession session, @RequestParam List<String> idx) throws Exception {
+		System.out.println("세션 받아온 id"+session.getAttribute("member_id"));
+		String userid =session.getAttribute("member_id").toString();
+
+		reservationService.delreservation(idx, userid);
+=======
 	public String userreservation(HttpSession session, @RequestParam List<String> box) throws Exception {
 		System.out.println("세션 받아온 id"+session.getAttribute("member_id"));
 		String userid =session.getAttribute("userId").toString();
@@ -160,6 +223,7 @@ public class ReservationController {
 		
 		  
 		reservationService.delreservation(box, userid);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		 
 		
 		return "redirect:/reservation/userreservation";
@@ -182,10 +246,14 @@ public class ReservationController {
 	// 수정
 	@PostMapping("updatereservation")
 	public String updatereservation(RedirectAttributes rattr ,Reservation reservation,Model model, @RequestParam String roominfo, HttpSession session) {
+<<<<<<< HEAD
+		String idx =session.getAttribute("reservidx").toString();
+=======
 		System.out.println("updatereservation 수정 들어옴");
 		String idx =session.getAttribute("reservidx").toString();
 		System.out.println("세션에 저장된 아이디값 "+idx);
 		System.out.println(reservation);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		String userid =session.getAttribute("member_id").toString();
 		
 //		  System.out.println("roominfo" + roominfo); System.out.println("enddate" +
@@ -199,12 +267,30 @@ public class ReservationController {
 		int cnt = reservationService.updatereservation(reservation, roominfo);
 		if(cnt == 1) {
 			rattr.addFlashAttribute("msg","예약 정보 수정 완료");
+<<<<<<< HEAD
+			return "redirect:/reservation/userreservation";
+		}else {
+			rattr.addFlashAttribute("msg", "수정중 이상 발생 다시 시도해주세요");
+			return "redirect:/reservation/updatereservation";
+		}
+	}
+	
+	/*
+	 * // 예약 취소
+	 * 
+	 * @PostMapping("cancelreservation") public String
+	 * cancelreservation(@RequestParam int idx[]) { System.out.println(idx);
+	 * reservationService.delreservation(map, userid); return ""; }
+	 */
+	
+=======
 			return "redirect:/Reservation/userreservation";
 		}else {
 			rattr.addFlashAttribute("msg", "수정중 이상 발생 다시 시도해주세요");
 			return "redirect:/Reservation/updatereservation";
 		}
 	}
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 // 캘린더 
 	@ResponseBody
 	@RequestMapping("CallCalendar")

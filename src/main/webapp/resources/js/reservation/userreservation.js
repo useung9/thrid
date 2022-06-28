@@ -5,19 +5,32 @@
 function btnclick(path,e){
 	e.preventDefault();
 	var idx = [];
+<<<<<<< HEAD
+	alert('취소버튼 클릭');
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 	$("input[name=box]:checked").each(function(){
 		var chk = $(this).val();
 		idx.push(chk);
+<<<<<<< HEAD
+=======
 	
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	})
 	
 	if(idx.length == 0){
 		alert('취소 데이터를 선택해주세요.');
 		return ;
 	}
+<<<<<<< HEAD
+	console.log(idx);
+	document.getElementById('frm_reserv').method ='post';
+	document.getElementById('frm_reserv').action=path+'/reservation/userreservation?idx='+idx;
+=======
 	document.getElementById('frm_reserv').method ='post';
 	document.getElementById('frm_reserv').action=path+'/Reservation/reservation';
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	document.getElementById('frm_reserv').submit();
 	
 

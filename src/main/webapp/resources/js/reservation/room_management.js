@@ -31,7 +31,11 @@ window.addEventListener('load', ()=>{
 					// 소스컴파일
 					const template = Handlebars.compile(source);
 					// 컴파일된 데이터를 div넣기
+<<<<<<< HEAD
+					document.getElementById('output22').innerHTML= template(data);
+=======
 					document.getElementById('output').innerHTML= template(data);
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 				}
 			},
 			error : console.error

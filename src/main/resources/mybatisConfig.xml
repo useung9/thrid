@@ -4,7 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
   
 <configuration>
+<<<<<<< HEAD
+	<settings>
+=======
 <settings>
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 		<!--널 허용:메퍼에서 값을 가져올 때 null 가능-->
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
@@ -15,6 +19,14 @@
 		<typeAlias type="app.spring.third.dto.RoomNReserv" alias="RoomNReserv"/>
 		<typeAlias type="app.spring.third.dto.RoomFile" alias="RoomFile"/>
 		<typeAlias type="app.spring.third.dto.Member" alias="Member"/>
+<<<<<<< HEAD
+		<typeAlias type="app.spring.third.dto.ReviewBoard" alias="ReviewBoard"/>
+		<typeAlias type="app.spring.third.dto.ComuBoard" alias="ComuBoard"/>
+		<typeAlias type="app.spring.third.dto.Reviewfile" alias="Reviewfile"/>
+		<typeAlias type="app.spring.third.dto.Reply" alias="Reply"/>
+		<typeAlias type="app.spring.third.dto.ComuReply" alias="ComuReply"/>
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	</typeAliases>
 
 </configuration>  

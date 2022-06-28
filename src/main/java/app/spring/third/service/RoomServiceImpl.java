@@ -8,13 +8,21 @@ import org.springframework.stereotype.Service;
 
 import app.spring.third.dto.Room;
 import app.spring.third.dto.RoomNReserv;
+<<<<<<< HEAD
+import app.spring.third.repository.RoomRepository;
+=======
 import app.spring.third.repository.RoomRepositoryImpl;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 
 @Service
 public class RoomServiceImpl implements RoomService {
 	
 	@Autowired
+<<<<<<< HEAD
+	private RoomRepository roomRepository;
+=======
 	private RoomRepositoryImpl roomRepository;
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 	
 	public List<Room> selectall(){
 		return roomRepository.select_all();
@@ -41,4 +49,13 @@ public class RoomServiceImpl implements RoomService {
 
 		return roomRepository.getroom_idx(room_name);
 	}
+<<<<<<< HEAD
+	
+	//룸정보 상세보기
+	@Override
+	public Room selectOne(int room_idx) {
+		return roomRepository.selectOne(room_idx);
+	}
+=======
+>>>>>>> e84d1ba97357fb2bd1686a48a2c537e809f06b9a
 }
